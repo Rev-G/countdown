@@ -26,7 +26,9 @@ const oranges = [
     "goldfish",
     "tangerine",
     "cheeto",
-    "cheese-puff"
+    "cheese-puff",
+    "peach",
+    "taco"
 ];
 
 function getRandom(arr) {
