@@ -4,9 +4,6 @@ apricot
 cantaloupe
 carrot
 traffic-cone
-cheesecake
-clown-fish
-goldfish
 tangerine
 cheeto
 cheese-puff
