@@ -1,17 +1,44 @@
+const fullnames = [
+    "The Commander-In-Thief",
+    "Genghis Don",
+    "Donye West",
+    "Kim Don Un",
+    "HippoPOTUS",
+    "Trumpelstiltskin",
+    "Grab-Ass Grandpa",
+    "Dozy Don",
+    "The Grifter In Chief",
+    "Don The Con",
+    "TACO",
+    "Uncle Scam",
+    "Humpty Trumpty",
+    "Cadet Bone Spurs",
+    "The Cheeto-in-Chief",
+    "Orange Julius Caesar",
+    "Velveeta Voldemort",
+    "The Commander-in-Tweet",
+    "Mango Mussolini",
+    "The Angry Creamsicle",
+    "Orange Julius Caesar",
+    "The Apricot Antichrist",
+    "Donald The Lame Duck",
+    "Donny Bone Spurs",
+    "Sweaty Dozevelt",
+    "Donald McTinyhands",
+    "The Tangerine Tyrant"
+];
+
 const prefixes = [
-    "ridiculous",
-    "baby-faced",
-    "disturbing",
-    "nasty",
-    "sad",
-    "moody",
-    "dishonest",
-    "selfish",
-    "awkward",
-    "greedy",
-    "dumpy",
-    "corrosive",
-    "weird"
+    "The ridiculous",
+    "The disturbing",
+    "The nasty",
+    "The moody",
+    "The dishonest",
+    "The selfish",
+    "The awkward",
+    "The greedy",
+    "The dumpy",
+    "The weird"
 ];
 
 const oranges = [
@@ -21,14 +48,9 @@ const oranges = [
     "cantaloupe",
     "carrot",
     "traffic-cone",
-    "cheesecake",
-    "clown-fish",
-    "goldfish",
     "tangerine",
     "cheeto",
-    "cheese-puff",
-    "peach",
-    "taco"
+    "cheese-puff"
 ];
 
 function getRandom(arr) {
@@ -36,9 +58,10 @@ function getRandom(arr) {
 }
 
 function showRandomSentence() {
-    const prefix = getRandom(prefixes);
-    const orange = getRandom(oranges);
-    const sentence = `${prefix} ${orange}`;
+    const combinations = prefixes.flatMap(prefix =>
+        oranges.map(orange => `${prefix} ${orange}`)
+    );
+    const sentence = getRandom([...combinations, ...fullnames]);
     const el = document.getElementById('random-part');
     if (el) el.textContent = sentence;
 }
